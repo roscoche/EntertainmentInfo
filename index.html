@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EntertainmentInfo</title>
+    <!-- You need to include jQuery, jQuery Mobile, and jQuery CSS in order for this to work -->
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" href="themes/SeriesCalendar.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/table.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/myfuncs.js"></script>
+	
+    <!-- viewport meta tag allows your app's contents to automatically scale to any device's screen -->
+    <meta name="viewport" content="width=device-width"/>
+	
+</head>
+<body>
+    <!-- This is a good example of single page arcitecture - your entire application is contained within a single web page -->
+    
+    <!-- This is your first page (in this example it is 1-day weather forecast) -->
+    <section id="series" data-role="page">
+        <div data-role="header" data-theme="a">
+            <h1>Series</h1>
+			<center>
+				<div data-role="navbar">
+				<ul>
+					<li><a id="seriesnav1" href="#" class="ui-btn-active">Series</a></li>
+					<li><a id="moviesnav1" href="#movies" onClick="setActive('#moviesnav2')">Movies</a></li>
+				</ul>
+				</div>
+			</center>
+        </div>
+        <div class="ui-content" data-role="content" data-theme="a">
+            
+            <div id="div1">Input Series:</div>
+			<input type="text" id="seriesinput"></input>
+			<button onclick="getDescription('series');">Get Description</button>
+			<div id="resultseries"></div>
+			<div id="testeseries">
+				<div data-role='main' class='ui-content'>
+					<div data-role='collapsible'>
+					  <h1>More Info</h1>
+					  <p><div id="descriptionseries"></div></p>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div data-role="footer" data-theme="a" >
+            <h1>EntertainmentInfo 2016</h1>
+        </div>
+		
+	</section>
+
+    <!-- This is the second page (in this example it is 5-day weather forecast) -->
+    <section id="movies" data-role="page">
+        <div data-role="header" data-theme="a">
+            <h1>Movies</h1>
+			<center>
+				<div data-role="navbar">
+				<ul>
+					<li><a id="seriesnav2" href="#series" onClick="setActive('#seriesnav1')">Series</a></li>
+					<li><a id="moviesnav2" href="#" class="ui-btn-active">Movies</a></li>
+				</ul>
+				</div>
+			</center>
+        </div>
+        <div class="ui-content" data-role="content" data-theme="a">
+            
+            <div id="div1">Input Movie:</div>
+			<input type="text" id="movieinput"></input>
+			<button onclick="getDescription('movie');">Get Description</button>
+			<div id="resultmovie"></div>
+			<div id="testemovie">
+				<div data-role='main' class='ui-content'>
+					<div data-role='collapsible'>
+					  <h1>More Info</h1>
+					  <p><div id="descriptionmovie"></div></p>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div data-role="footer" data-theme="a" >
+            <h1>EntertainmentInfo 2016</h1>
+        </div>
+		
+	</section>
+    
+</body>
+</html>
